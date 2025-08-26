@@ -202,7 +202,32 @@ html {
   }
 }
 
-/* Calendly styles fix */
-.lmtWIHO_gkbTeeyuvoJC.mOUYF5ZmuNL6I7t0mSFg {
-  background-color: transparent !important;
+/* Custom Animation */
+@keyframes rainbow-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.rainbow-text {
+  background: linear-gradient(
+    270deg,
+    #ff0000,
+    #ff7f00,
+    #ffff00,
+    #00ff00,
+    #0000ff,
+    #4b0082,
+    #8f00ff
+  );
+  background-size: 1400% 1400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-move 8s ease infinite;
 }

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import FooterSection from "@/layout/footer";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,7 +39,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} antialiased`}
       >
         {children}
-
+        <Toaster />
         <FooterSection />
       </body>
     </html>

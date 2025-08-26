@@ -8,8 +8,10 @@ import Header from "@/layout/header";
 import Services from "@/layout/services";
 import ShaderBackground from "@/shaders/background";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <ShaderBackground>
       <div
@@ -46,18 +48,10 @@ export default function Home() {
 
             <div className="flex flex-col justify-center gap-3 px-4 pt-8 font-sans sm:flex-row">
               <Button
-                onClick={() => {
-                  document.getElementById("services")?.scrollIntoView({
-                    behavior: "smooth",
-                  });
-                }}
-                className="w-full cursor-pointer rounded-full bg-transparent px-6 py-4 font-light text-white hover:scale-105 hover:text-black sm:w-auto sm:px-7 sm:py-6 dark:text-white dark:hover:text-black"
-                variant={"outline"}
+                onClick={() => router.push("/journey")}
+                className="w-full cursor-pointer rounded-full px-6 py-4 font-light hover:scale-105 sm:w-auto sm:px-7 sm:py-6"
               >
-                Our Services
-              </Button>
-              <Button className="w-full cursor-pointer rounded-full px-6 py-4 font-light hover:scale-105 sm:w-auto sm:px-7 sm:py-6">
-                Schedule Call
+                Start Your Journey
               </Button>
             </div>
           </InView>

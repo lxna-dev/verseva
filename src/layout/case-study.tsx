@@ -2,6 +2,7 @@
 
 import { Play, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function CaseStudy() {
   return (
@@ -13,7 +14,7 @@ export default function CaseStudy() {
             <div className="relative overflow-hidden rounded-2xl border border-red-500/20 bg-gradient-to-br from-red-500/10 to-transparent backdrop-blur-sm">
               {/* Video Thumbnail */}
               <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
-                <img
+                <Image
                   src="/professional-business-consultant-in-modern-office-.png"
                   alt="Case Study Video"
                   className="h-full w-full object-cover opacity-80"
