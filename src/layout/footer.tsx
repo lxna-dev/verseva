@@ -24,12 +24,11 @@ const Socials = [
   },
 ];
 
-const navLinks = [
-  { href: "#", label: "Features" },
-  { href: "#", label: "Pricing" },
-  { href: "#", label: "Docs" },
-  { href: "#", label: "About" },
-  { href: "#", label: "Contact" },
+const Links = [
+  { title: "Back to Top", href: "#top" },
+  { title: "Services", href: "#services" },
+  { title: "Case Study", href: "#case-study" },
+  { title: "Contact", href: "#book-with-us" },
 ];
 
 export default function FooterSection() {
@@ -63,13 +62,13 @@ export default function FooterSection() {
             <div>
               <h3 className="mb-4 font-semibold text-white">Navigation</h3>
               <ul className="space-y-3">
-                {navLinks.map(({ href, label }) => (
-                  <li key={label}>
+                {Links.map(({ href, title }) => (
+                  <li key={title}>
                     <a
                       href={href}
                       className="text-sm text-white/70 transition-colors duration-200 hover:text-white"
                     >
-                      {label}
+                      {title}
                     </a>
                   </li>
                 ))}
@@ -85,7 +84,7 @@ export default function FooterSection() {
                     key={name}
                     href={href}
                     aria-label={name}
-                    className="group rounded-full border border-white/20 bg-white/10 p-2 transition-all duration-300 hover:border-red-500/30 hover:bg-red-500/20"
+                    className="flex items-center justify-center rounded-full border border-white/20 bg-white/10 p-2 transition-all duration-300 hover:border-red-500/30 hover:bg-red-500/20"
                   >
                     <Icon className="h-5 w-5 text-white/70 transition-colors duration-300 group-hover:text-red-400" />
                   </a>

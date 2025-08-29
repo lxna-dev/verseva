@@ -6,7 +6,10 @@ import Image from "next/image";
 
 export default function CaseStudy() {
   return (
-    <section id="case-study" className="overflow-hidden px-4 py-24">
+    <section
+      id="case-study"
+      className="scroll-mt-32 overflow-hidden px-4 py-24"
+    >
       <div className="relative mx-auto max-w-7xl">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Video/Image Side */}
@@ -15,9 +18,11 @@ export default function CaseStudy() {
               {/* Video Thumbnail */}
               <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
                 <Image
-                  src="/professional-business-consultant-in-modern-office-.png"
+                  src="/Emblem_Negative.webp"
                   alt="Case Study Video"
                   className="h-full w-full object-cover opacity-80"
+                  width={300}
+                  height={300}
                 />
 
                 {/* Play Button Overlay */}

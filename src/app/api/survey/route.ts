@@ -33,7 +33,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const { full_name, ...rest } = body;
+    const { full_name } = body;
     let first_name = "";
     let last_name = "";
 

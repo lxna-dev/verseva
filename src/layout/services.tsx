@@ -10,7 +10,7 @@ import {
 
 export default function Services() {
   return (
-    <section id="services" className="relative px-4 py-24">
+    <section id="services" className="relative scroll-mt-32 px-4 py-24">
       <div className="mx-auto max-w-7xl">
         <h2 className="mb-16 text-center text-4xl font-bold text-white md:text-5xl">
           Is this for you?
@@ -18,14 +18,12 @@ export default function Services() {
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {/* Strategic Planning */}
-          <div className="group rounded-2xl border border-red-500/20 bg-gradient-to-br from-red-900/20 via-red-800/15 to-black/30 p-6 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-red-400/40 hover:shadow-2xl hover:shadow-red-500/30">
+          <div className="card-gradient-red">
             <div className="mb-4 flex items-center justify-between">
-              <div className="rounded-xl bg-white p-3 shadow-lg shadow-red-500/25 transition-transform duration-300 group-hover:scale-110">
+              <div className="icon-container">
                 <Target className="h-6 w-6 text-black" />
               </div>
-              <div className="rounded-full border border-green-400/30 bg-green-400/20 px-3 py-1 text-sm font-semibold text-green-400 backdrop-blur-sm">
-                Core Service
-              </div>
+              <div className="badge-green">Core Service</div>
             </div>
             <h3 className="mb-2 text-xl font-bold text-white">
               Strategic Planning
@@ -37,14 +35,12 @@ export default function Services() {
           </div>
 
           {/* Operations Optimization */}
-          <div className="group rounded-2xl border border-red-500/20 bg-gradient-to-br from-red-900/20 via-red-800/15 to-black/30 p-6 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-red-400/40 hover:shadow-2xl hover:shadow-red-500/30">
+          <div className="card-gradient-red">
             <div className="mb-4 flex items-center justify-between">
-              <div className="rounded-xl bg-white p-3 shadow-lg shadow-red-500/25 transition-transform duration-300 group-hover:scale-110">
+              <div className="icon-container">
                 <Settings className="h-6 w-6 text-black" />
               </div>
-              <div className="rounded-full border border-blue-400/30 bg-blue-400/20 px-3 py-1 text-sm font-semibold text-blue-400 backdrop-blur-sm">
-                Popular
-              </div>
+              <div className="badge-blue">Popular</div>
             </div>
             <h3 className="mb-2 text-xl font-bold text-white">
               Operations Optimization
@@ -56,14 +52,12 @@ export default function Services() {
           </div>
 
           {/* Growth Acceleration */}
-          <div className="group rounded-2xl border border-red-500/20 bg-gradient-to-br from-red-900/20 via-red-800/15 to-black/30 p-6 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-red-400/40 hover:shadow-2xl hover:shadow-red-500/30">
+          <div className="card-gradient-red">
             <div className="mb-4 flex items-center justify-between">
-              <div className="rounded-xl bg-white p-3 shadow-lg shadow-red-500/25 transition-transform duration-300 group-hover:scale-110">
+              <div className="icon-container">
                 <TrendingUp className="h-6 w-6 text-black" />
               </div>
-              <div className="rounded-full border border-purple-400/30 bg-purple-400/20 px-3 py-1 text-sm font-semibold text-purple-400 backdrop-blur-sm">
-                High Impact
-              </div>
+              <div className="badge-purple">High Impact</div>
             </div>
             <h3 className="mb-2 text-xl font-bold text-white">
               Growth Acceleration
@@ -75,14 +69,12 @@ export default function Services() {
           </div>
 
           {/* Team Development */}
-          <div className="group rounded-2xl border border-red-500/20 bg-gradient-to-br from-red-900/20 via-red-800/15 to-black/30 p-6 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-red-400/40 hover:shadow-2xl hover:shadow-red-500/30">
+          <div className="card-gradient-red">
             <div className="mb-4 flex items-center justify-between">
-              <div className="rounded-xl bg-white p-3 shadow-lg shadow-red-500/25 transition-transform duration-300 group-hover:scale-110">
+              <div className="icon-container">
                 <Users className="h-6 w-6 text-black" />
               </div>
-              <div className="rounded-full border border-orange-400/30 bg-orange-400/20 px-3 py-1 text-sm font-semibold text-orange-400 backdrop-blur-sm">
-                Essential
-              </div>
+              <div className="badge-orange">Essential</div>
             </div>
             <h3 className="mb-2 text-xl font-bold text-white">
               Team Development
@@ -94,14 +86,12 @@ export default function Services() {
           </div>
 
           {/* Performance Analytics */}
-          <div className="group rounded-2xl border border-red-500/20 bg-gradient-to-br from-red-900/20 via-red-800/15 to-black/30 p-6 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-red-400/40 hover:shadow-2xl hover:shadow-red-500/30">
+          <div className="card-gradient-red">
             <div className="mb-4 flex items-center justify-between">
-              <div className="rounded-xl bg-white p-3 shadow-lg shadow-red-500/25 transition-transform duration-300 group-hover:scale-110">
+              <div className="icon-container">
                 <BarChart3 className="h-6 w-6 text-black" />
               </div>
-              <div className="rounded-full border border-cyan-400/30 bg-cyan-400/20 px-3 py-1 text-sm font-semibold text-cyan-400 backdrop-blur-sm">
-                Data-Driven
-              </div>
+              <div className="badge-cyan">Data-Driven</div>
             </div>
             <h3 className="mb-2 text-xl font-bold text-white">
               Performance Analytics
@@ -113,14 +103,12 @@ export default function Services() {
           </div>
 
           {/* Innovation Strategy */}
-          <div className="group rounded-2xl border border-red-500/20 bg-gradient-to-br from-red-900/20 via-red-800/15 to-black/30 p-6 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-red-400/40 hover:shadow-2xl hover:shadow-red-500/30">
+          <div className="card-gradient-red">
             <div className="mb-4 flex items-center justify-between">
-              <div className="rounded-xl bg-white p-3 shadow-lg shadow-red-500/25 transition-transform duration-300 group-hover:scale-110">
+              <div className="icon-container">
                 <Lightbulb className="h-6 w-6 text-black" />
               </div>
-              <div className="rounded-full border border-yellow-400/30 bg-yellow-400/20 px-3 py-1 text-sm font-semibold text-yellow-400 backdrop-blur-sm">
-                Future-Ready
-              </div>
+              <div className="badge-yellow">Future-Ready</div>
             </div>
             <h3 className="mb-2 text-xl font-bold text-white">
               Innovation Strategy

@@ -12,7 +12,7 @@ const Links = [
   { title: "Back to Top", href: "#top" },
   { title: "Services", href: "#services" },
   { title: "Case Study", href: "#case-study" },
-  { title: "Contact", href: "#contact" },
+  { title: "Contact", href: "#book-with-us" },
 ];
 
 const Socials = [
@@ -60,6 +60,7 @@ export default function Header() {
               onClick={() => {
                 document.querySelector(item.href)?.scrollIntoView({
                   behavior: "smooth",
+                  block: "center",
                 });
               }}
               className="rounded-full px-3 py-1 text-sm font-light text-white/80 transition-all duration-200 hover:cursor-pointer hover:bg-white/10 hover:text-white"
@@ -93,6 +94,7 @@ export default function Header() {
             onClick={() => {
               document.getElementById("book-with-us")?.scrollIntoView({
                 behavior: "smooth",
+                block: "center",
               });
             }}
             className="cursor-pointer rounded-lg px-3 py-3 font-sans text-xs font-light transition-transform duration-300 hover:scale-105 md:px-5 md:py-5 md:text-sm"

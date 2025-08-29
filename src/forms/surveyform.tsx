@@ -1,6 +1,7 @@
 "use client";
 
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState, useCallback, useMemo } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -19,15 +20,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
-import {
-  CheckCircle,
-  Shield,
-  ArrowLeft,
-  ArrowRight,
-  Star,
-  Target,
-  Rocket,
-} from "lucide-react";
+import { CheckCircle, Shield, ArrowLeft, ArrowRight } from "lucide-react";
 import { Country, State } from "country-state-city";
 import { toast } from "sonner";
 
@@ -47,8 +40,6 @@ interface FormData {
   availability: string;
   actionPlan: string;
   businessType: string;
-  score?: number;
-  category?: string;
 }
 
 function categorizeUser(
@@ -123,100 +114,10 @@ function categorizeUser(
   return { category, score };
 }
 
-const ResultsComponent = ({
-  category,
-  score,
-  formData,
-}: {
-  category: string;
-  score: number;
-  formData: FormData;
-}) => {
-  const getCategoryInfo = (cat: string) => {
-    switch (cat) {
-      case "Explorer":
-        return {
-          icon: <Star className="h-12 w-12 text-blue-500" />,
-          color: "bg-blue-50 border-blue-200",
-          description:
-            "You're at the beginning of your journey with a hobby skill, wanting to start a side hustle but unsure where to start. You have limited time (<5 hrs/week) and aren't fully comfortable with content creation yet.",
-          nextSteps:
-            "Focus on building confidence, start with small experiments, and gradually increase your comfort with sharing your skills online.",
-        };
-      case "Builder":
-        return {
-          icon: <Target className="h-12 w-12 text-green-500" />,
-          color: "bg-green-50 border-green-200",
-          description:
-            "You're earning some side income and want to build a personal brand. You have moderate availability (5-10 hrs/week) and are somewhat comfortable with content creation, but struggle with marketing.",
-          nextSteps:
-            "Develop a consistent content strategy, learn marketing fundamentals, and systematically build your personal brand online.",
-        };
-      case "Scaler":
-        return {
-          icon: <Rocket className="h-12 w-12 text-purple-500" />,
-          color: "bg-purple-50 border-purple-200",
-          description:
-            "You already have a business and want to scale it. You're very comfortable with content creation, have good availability, but need better business strategy to reach the next level.",
-          nextSteps:
-            "Focus on strategic planning, optimize your systems and processes, and implement scalable growth strategies.",
-        };
-      default:
-        return {
-          icon: <Star className="h-12 w-12 text-gray-500" />,
-          color: "bg-gray-50 border-gray-200",
-          description: "Your profile is unique!",
-          nextSteps: "Let's create a custom plan for your specific situation.",
-        };
-    }
-  };
-
-  const categoryInfo = getCategoryInfo(category);
-
-  return (
-    <div className="space-y-6">
-      <div className="text-center">
-        <div className="mb-4 flex justify-center">{categoryInfo.icon}</div>
-        <h2 className="text-foreground mb-2 text-3xl font-bold">
-          {`You're a ${category}`}!
-        </h2>
-        <p className="text-muted-foreground mb-4 text-lg">
-          Your score: {score} points
-        </p>
-      </div>
-
-      <Card className={`${categoryInfo.color} border-2`}>
-        <CardContent className="p-6">
-          <h3 className="mb-3 text-xl font-semibold">Your Profile</h3>
-          <p className="mb-4 text-gray-700">{categoryInfo.description}</p>
-
-          <h4 className="mb-2 text-lg font-semibold">Recommended Next Steps</h4>
-          <p className="text-gray-700">{categoryInfo.nextSteps}</p>
-        </CardContent>
-      </Card>
-
-      <div className="text-center">
-        <p className="text-muted-foreground mb-4">
-          Thank you,{" "}
-          <span className="rainbow-text font-bold">{formData.full_name}! </span>{" "}
-          <br /> <br />
-          <span className="rainbow-text font-bold">
-            Check your email for your personalized plan (PDF checklist / starter
-            kit).
-          </span>
-        </p>
-      </div>
-    </div>
-  );
-};
-
 export default function LeadGenForm() {
+  const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
-  const [showResults, setShowResults] = useState(false);
-  const [userCategory, setUserCategory] = useState<{
-    category: string;
-    score: number;
-  } | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     full_name: "",
     email: "",
@@ -233,15 +134,18 @@ export default function LeadGenForm() {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const updateFormData = (field: keyof FormData, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
-    // Clear error when user starts typing
-    if (errors[field]) {
-      setErrors((prev) => ({ ...prev, [field]: "" }));
-    }
-  };
+  const updateFormData = useCallback(
+    (field: keyof FormData, value: string) => {
+      setFormData((prev) => ({ ...prev, [field]: value }));
+      // Clear error when user starts typing
+      if (errors[field]) {
+        setErrors((prev) => ({ ...prev, [field]: "" }));
+      }
+    },
+    [errors],
+  );
 
-  const validateStep1 = () => {
+  const validateStep1 = useCallback(() => {
     const newErrors: Record<string, string> = {};
 
     if (!formData.full_name.trim())
@@ -259,9 +163,9 @@ export default function LeadGenForm() {
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
-  };
+  }, [formData.full_name, formData.email, formData.phone]);
 
-  const validateStep2 = () => {
+  const validateStep2 = useCallback(() => {
     const newErrors: Record<string, string> = {};
 
     if (!formData.country) newErrors.country = "Please select a country";
@@ -269,9 +173,9 @@ export default function LeadGenForm() {
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
-  };
+  }, [formData.country, formData.state]);
 
-  const validateStep3 = () => {
+  const validateStep3 = useCallback(() => {
     const newErrors: Record<string, string> = {};
 
     if (!formData.usage)
@@ -288,9 +192,16 @@ export default function LeadGenForm() {
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
-  };
+  }, [
+    formData.usage,
+    formData.goal,
+    formData.challenge,
+    formData.comfort,
+    formData.availability,
+    formData.actionPlan,
+  ]);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     let isValid = false;
 
     if (currentStep === 1) isValid = validateStep1();
@@ -302,15 +213,16 @@ export default function LeadGenForm() {
     } else if (isValid && currentStep === 3) {
       handleSubmit();
     }
-  };
+  }, [currentStep, validateStep1, validateStep2, validateStep3]);
 
-  const handleBack = () => {
+  const handleBack = useCallback(() => {
     if (currentStep > 1) {
       setCurrentStep((prev) => prev - 1);
     }
-  };
+  }, [currentStep]);
 
-  const handleSubmit = async () => {
+  const handleSubmit = useCallback(async () => {
+    setIsSubmitting(true);
     const result = categorizeUser(
       formData.usage,
       formData.goal,
@@ -319,13 +231,15 @@ export default function LeadGenForm() {
       formData.availability,
     );
 
-    const updatedFormData = {
+    const surveyResults = {
       ...formData,
       score: result.score,
       category: result.category,
+      submittedAt: new Date().toISOString(),
     };
 
-    setUserCategory(result);
+    // Save to localStorage
+    localStorage.setItem("surveyResults", JSON.stringify(surveyResults));
 
     toast("Survey Submitted Successfully!");
 
@@ -335,33 +249,41 @@ export default function LeadGenForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(updatedFormData),
+        body: JSON.stringify(surveyResults),
       });
 
       const data = await res.json();
       console.log("Survey submitted:", data);
 
-      setShowResults(true);
+      // Redirect to results page
+      router.push("/results");
     } catch (err) {
       console.error("Submit error:", err);
+      // Still redirect to results even if API fails since data is in localStorage
+      router.push("/results");
+    } finally {
+      setIsSubmitting(false);
     }
-  };
+  }, [formData, router]);
 
-  const handleCountryChange = (country: string) => {
-    updateFormData("country", country);
-    updateFormData("state", ""); // Reset state when country changes
-  };
+  const handleCountryChange = useCallback(
+    (country: string) => {
+      updateFormData("country", country);
+      updateFormData("state", ""); // Reset state when country changes
+    },
+    [updateFormData],
+  );
 
-  const countries = Country.getAllCountries();
+  const countries = useMemo(() => Country.getAllCountries(), []);
 
-  const getAvailableStates = () => {
+  const availableStates = useMemo(() => {
     if (!formData.country) return [];
     // Find the selected country by name
     const country = countries.find((c) => c.name === formData.country);
     if (!country) return [];
     // Get states by ISO code
     return State.getStatesOfCountry(country.isoCode);
-  };
+  }, [formData.country, countries]);
 
   const renderStep1 = () => (
     <div className="space-y-6">
@@ -480,7 +402,7 @@ export default function LeadGenForm() {
               />
             </SelectTrigger>
             <SelectContent>
-              {getAvailableStates().map((state) => (
+              {availableStates.map((state) => (
                 <SelectItem key={state.isoCode} value={state.name}>
                   {state.name}
                 </SelectItem>
@@ -727,28 +649,6 @@ export default function LeadGenForm() {
     </div>
   );
 
-  if (showResults && userCategory) {
-    return (
-      <Card className="border-border mx-auto max-w-2xl bg-white/90 font-sans shadow-lg backdrop-blur-md">
-        <CardHeader className="text-center">
-          <CardTitle className="text-card-foreground text-3xl font-bold">
-            Your Results Are Ready!
-          </CardTitle>
-          <CardDescription className="text-lg text-neutral-800">
-            Based on your responses, {`here's`} your personalized profile
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <ResultsComponent
-            category={userCategory.category}
-            score={userCategory.score}
-            formData={formData}
-          />
-        </CardContent>
-      </Card>
-    );
-  }
-
   return (
     <Card className="border-border mx-auto max-w-2xl bg-red-100/75 font-sans shadow-lg backdrop-blur-md">
       <CardHeader className="text-center">
@@ -796,8 +696,37 @@ export default function LeadGenForm() {
             type="button"
             onClick={handleNext}
             className="bg-primary hover:bg-secondary flex items-center gap-2 transition-colors"
+            disabled={isSubmitting}
           >
-            {currentStep === 3 ? "Submit" : "Next"}
+            {isSubmitting ? (
+              <span className="flex items-center gap-2">
+                <svg
+                  className="h-4 w-4 animate-spin text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+                Submitting...
+              </span>
+            ) : currentStep === 3 ? (
+              "Submit"
+            ) : (
+              "Next"
+            )}
             {currentStep < 3 && <ArrowRight className="h-4 w-4" />}
           </Button>
         </div>

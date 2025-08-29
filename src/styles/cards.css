@@ -1,0 +1,35 @@
+/* Card background styles */
+
+.card-gradient-red {
+  @apply rounded-2xl border border-red-500/20 bg-gradient-to-br from-red-900/20 via-red-800/15 to-black/30 p-6 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-red-400/40 hover:shadow-2xl hover:shadow-red-500/30;
+}
+
+/* Icon container styles */
+.icon-container {
+  @apply rounded-xl bg-white p-3 shadow-lg shadow-red-500/25 transition-transform duration-300 group-hover:scale-110;
+}
+
+/* Badge styles */
+.badge-green {
+  @apply rounded-full border border-green-400/30 bg-green-400/20 px-3 py-1 text-sm font-semibold text-green-400 backdrop-blur-sm;
+}
+
+.badge-blue {
+  @apply rounded-full border border-blue-400/30 bg-blue-400/20 px-3 py-1 text-sm font-semibold text-blue-400 backdrop-blur-sm;
+}
+
+.badge-purple {
+  @apply rounded-full border border-purple-400/30 bg-purple-400/20 px-3 py-1 text-sm font-semibold text-purple-400 backdrop-blur-sm;
+}
+
+.badge-orange {
+  @apply rounded-full border border-orange-400/30 bg-orange-400/20 px-3 py-1 text-sm font-semibold text-orange-400 backdrop-blur-sm;
+}
+
+.badge-cyan {
+  @apply rounded-full border border-cyan-400/30 bg-cyan-400/20 px-3 py-1 text-sm font-semibold text-cyan-400 backdrop-blur-sm;
+}
+
+.badge-yellow {
+  @apply rounded-full border border-yellow-400/30 bg-yellow-400/20 px-3 py-1 text-sm font-semibold text-yellow-400 backdrop-blur-sm;
+}
