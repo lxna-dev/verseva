@@ -1,6 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import DiscordAltIcon from "@/icons/Discord";
+import TwitterXIcon from "@/icons/X";
 import { Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 import Image from "next/image";
 import { title } from "process";
@@ -16,10 +18,26 @@ const Links = [
 ];
 
 const Socials = [
-  { title: "Twitter", icon: <Twitter />, href: "#" },
-  { title: "Instagram", icon: <Instagram />, href: "#" },
-  { title: "Linkedin", icon: <Linkedin />, href: "#" },
-  { title: "Youtube", icon: <Youtube />, href: "#" },
+  {
+    title: "Twitter",
+    icon: <TwitterXIcon />,
+    href: "https://x.com/xhunnanthony",
+  },
+  {
+    title: "Instagram",
+    icon: <Instagram />,
+    href: "https://www.instagram.com/xhunnanthony",
+  },
+  {
+    title: "Discord",
+    icon: <DiscordAltIcon />,
+    href: "https://discord.com/invite/qv9KgMzhMN",
+  },
+  {
+    title: "Youtube",
+    icon: <Youtube />,
+    href: "https://www.youtube.com/@xhunn",
+  },
 ];
 
 export default function Header() {
@@ -78,6 +96,9 @@ export default function Header() {
               <div
                 key={item.title}
                 className="rounded-full px-3 py-2 text-sm font-light text-white/80 transition-all duration-200 hover:cursor-pointer hover:bg-white/10 hover:text-white"
+                onClick={() => {
+                  window.open(item.href, "_blank");
+                }}
               >
                 {item.icon}
               </div>
@@ -86,7 +107,7 @@ export default function Header() {
 
           {/* Contact (Hidden on mobile) */}
           <div className="text-md hidden font-light text-white/80 xl:block">
-            Get in touch: email@example.com
+            Get in touch: hello@verseva.com
           </div>
 
           {/* CTA Button */}

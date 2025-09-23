@@ -1,10 +1,24 @@
 "use client";
 
-import { Play, Quote } from "lucide-react";
+import { Play, Quote, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function CaseStudy() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoId = "OAnyP3HTwh4";
+  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+
+  const handlePlayVideo = () => {
+    setIsPlaying(true);
+  };
+
+  const handleCloseVideo = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsPlaying(false);
+  };
+
   return (
     <section
       id="case-study"
@@ -15,28 +29,54 @@ export default function CaseStudy() {
           {/* Video/Image Side */}
           <div className="group relative">
             <div className="relative overflow-hidden rounded-2xl border border-red-500/20 bg-gradient-to-br from-red-500/10 to-transparent backdrop-blur-sm">
-              {/* Video Thumbnail */}
-              <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
-                <Image
-                  src="/Emblem_Negative.webp"
-                  alt="Case Study Video"
-                  className="h-full w-full object-cover opacity-80"
-                  width={300}
-                  height={300}
-                />
-
-                {/* Play Button Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center bg-black/30 transition-all duration-300 group-hover:bg-black/20">
-                  <div className="flex h-20 w-20 items-center justify-center rounded-full bg-red-500 shadow-2xl shadow-red-500/50 transition-all duration-300 group-hover:scale-110 group-hover:shadow-red-500/70">
-                    <Play
-                      className="ml-1 h-8 w-8 text-white"
-                      fill="currentColor"
-                    />
+              {/* Video Thumbnail or Player */}
+              <div
+                className="relative aspect-video cursor-pointer overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800"
+                onClick={handlePlayVideo}
+              >
+                {isPlaying ? (
+                  <div className="relative h-full w-full">
+                    <div className="absolute top-3 right-3 z-50">
+                      <button
+                        onClick={handleCloseVideo}
+                        className="flex h-8 w-8 items-center justify-center rounded-full bg-black/70 text-white hover:bg-black"
+                        aria-label="Close video"
+                      >
+                        <X className="h-4 w-4" />
+                      </button>
+                    </div>
+                    <iframe
+                      src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute inset-0 h-full w-full border-0"
+                    ></iframe>
                   </div>
-                </div>
+                ) : (
+                  <>
+                    <Image
+                      src={thumbnailUrl}
+                      alt="Case Study Video"
+                      className="h-full w-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
+                      width={1280}
+                      height={720}
+                    />
 
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    {/* Play Button Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 transition-all duration-300 group-hover:bg-black/20">
+                      <div className="flex h-20 w-20 items-center justify-center rounded-full bg-red-500 shadow-2xl shadow-red-500/50 transition-all duration-300 group-hover:scale-110 group-hover:shadow-red-500/70">
+                        <Play
+                          className="ml-1 h-8 w-8 text-white"
+                          fill="currentColor"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  </>
+                )}
               </div>
 
               {/* Video Info */}
@@ -68,7 +108,7 @@ export default function CaseStudy() {
               <Quote className="absolute -top-4 -left-2 h-16 w-16 text-red-500/30" />
               <div className="pl-12">
                 <span className="text-sm font-medium tracking-wider text-red-400 uppercase">
-                  Success Story
+                  Case Study
                 </span>
               </div>
             </div>

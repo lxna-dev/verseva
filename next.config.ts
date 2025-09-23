@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: [
+      "img.youtube.com", // Allow YouTube thumbnails
+      "i.ytimg.com", // Alternative YouTube image domain
+    ],
+  },
 };
 
 export default nextConfig;

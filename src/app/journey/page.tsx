@@ -5,11 +5,11 @@ import React from "react";
 
 export default function page() {
   return (
-    <div className="container m-auto mt-40 justify-center">
+    <div className="w-screen max-w-[100vw] overflow-hidden">
       <ShaderBackground>
         <AltHeader />
-        <div className="container m-auto flex w-full items-center justify-center align-middle">
-          <div className="w-full">
+        <div className="flex min-h-screen w-full items-center justify-center px-4 pt-24 pb-8">
+          <div className="w-full max-w-2xl">
             <LeadGenForm />
           </div>
         </div>

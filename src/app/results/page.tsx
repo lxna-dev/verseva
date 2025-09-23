@@ -14,7 +14,6 @@ import { ArrowLeft } from "lucide-react";
 import ShaderBackground from "@/shaders/background";
 import AltHeader from "@/layout/alt-header";
 import Offers from "@/layout/offers";
-import InView from "@/animations/inview";
 
 interface SurveyResults {
   full_name: string;

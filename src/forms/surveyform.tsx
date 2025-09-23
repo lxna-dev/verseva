@@ -1,7 +1,7 @@
 "use client";
 
-import { ChangeEvent, useState, useCallback, useMemo } from "react";
-import { useRouter } from "next/navigation";
+import { ChangeEvent, useState, useCallback, useMemo, useEffect } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -115,9 +115,9 @@ function categorizeUser(
 }
 
 export default function LeadGenForm() {
-  const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [redirectUrl, setRedirectUrl] = useState("/results");
   const [formData, setFormData] = useState<FormData>({
     full_name: "",
     email: "",
@@ -133,6 +133,28 @@ export default function LeadGenForm() {
     businessType: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  // Load user data from localStorage on component mount
+  useEffect(() => {
+    try {
+      const savedUserData = localStorage.getItem("userFormData");
+      if (savedUserData) {
+        const userData = JSON.parse(savedUserData);
+
+        // Update only the name and email fields from localStorage data
+        setFormData((prevData) => ({
+          ...prevData,
+          full_name: userData.full_name || prevData.full_name,
+          email: userData.email || prevData.email,
+        }));
+
+        // Clear localStorage data now that it's been used
+        localStorage.removeItem("userFormData");
+      }
+    } catch (error) {
+      console.error("Error loading user data:", error);
+    }
+  }, []);
 
   const updateFormData = useCallback(
     (field: keyof FormData, value: string) => {
@@ -238,38 +260,32 @@ export default function LeadGenForm() {
       submittedAt: new Date().toISOString(),
     };
 
-    // Save to localStorage
     localStorage.setItem("surveyResults", JSON.stringify(surveyResults));
 
     toast("Survey Submitted Successfully!");
+    setRedirectUrl("/results");
+
+    window.location.href = "/results";
 
     try {
-      const res = await fetch("/api/survey", {
+      fetch("/api/survey", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(surveyResults),
+      }).catch((err) => {
+        console.error("Submit error:", err);
       });
-
-      const data = await res.json();
-      console.log("Survey submitted:", data);
-
-      // Redirect to results page
-      router.push("/results");
     } catch (err) {
       console.error("Submit error:", err);
-      // Still redirect to results even if API fails since data is in localStorage
-      router.push("/results");
-    } finally {
-      setIsSubmitting(false);
     }
-  }, [formData, router]);
+  }, [formData]);
 
   const handleCountryChange = useCallback(
     (country: string) => {
       updateFormData("country", country);
-      updateFormData("state", ""); // Reset state when country changes
+      updateFormData("state", "");
     },
     [updateFormData],
   );
@@ -278,17 +294,15 @@ export default function LeadGenForm() {
 
   const availableStates = useMemo(() => {
     if (!formData.country) return [];
-    // Find the selected country by name
     const country = countries.find((c) => c.name === formData.country);
     if (!country) return [];
-    // Get states by ISO code
     return State.getStatesOfCountry(country.isoCode);
   }, [formData.country, countries]);
 
   const renderStep1 = () => (
     <div className="space-y-6">
       <div className="mb-6 text-center">
-        <h2 className="text-foreground mb-2 text-2xl font-bold">
+        <h2 className="text-base-foreground mb-2 text-2xl font-bold">
           Personal Information
         </h2>
         <p className="text-neutral-800">
@@ -337,7 +351,7 @@ export default function LeadGenForm() {
             value={formData.phone}
             onChange={(phone) => updateFormData("phone", phone)}
             containerClass="flex w-full border border-border rounded-md  bg-input"
-            inputClass={`flex-1 px-3 py-2 bg-input text-foreground focus:outline-none focus:ring-2 focus:ring-ring ${
+            inputClass={`flex-1 px-4 py-6 bg-input text-background focus:outline-none focus:ring-2 focus:ring-ring ${
               errors.phone ? "border-red-500" : ""
             }`}
             dropdownClass="absolute mt-1 max-h-60 w-64 overflow-auto rounded-md border border-border bg-popover shadow-md z-50"
@@ -370,7 +384,11 @@ export default function LeadGenForm() {
             >
               <SelectValue placeholder="Select your country" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent
+              position="popper"
+              className="z-50 min-w-[200px]"
+              sideOffset={5}
+            >
               {countries.map((country) => (
                 <SelectItem key={country.isoCode} value={country.name}>
                   {country.name}
@@ -401,7 +419,11 @@ export default function LeadGenForm() {
                 }
               />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent
+              position="popper"
+              className="z-50 min-w-[200px]"
+              sideOffset={5}
+            >
               {availableStates.map((state) => (
                 <SelectItem key={state.isoCode} value={state.name}>
                   {state.name}
@@ -442,7 +464,11 @@ export default function LeadGenForm() {
             >
               <SelectValue placeholder="Select your skill or talent" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent
+              position="popper"
+              className="z-50 min-w-[200px]"
+              sideOffset={5}
+            >
               {[
                 "Writing & Communication",
                 "Visual Design / Creativity",
@@ -474,7 +500,11 @@ export default function LeadGenForm() {
             >
               <SelectValue placeholder="Select how you use it" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent
+              position="popper"
+              className="z-50 min-w-[200px]"
+              sideOffset={5}
+            >
               {[
                 "Just a hobby",
                 "Part of my job",
@@ -494,7 +524,7 @@ export default function LeadGenForm() {
 
         <div className="space-y-2">
           <Label htmlFor="goal">
-            Q3. What’s your biggest goal right now? *
+            Q3. What&apos;s your biggest goal right now? *
           </Label>
           <Select
             value={formData.goal}
@@ -505,7 +535,11 @@ export default function LeadGenForm() {
             >
               <SelectValue placeholder="Select your goal" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent
+              position="popper"
+              className="z-50 min-w-[200px]"
+              sideOffset={5}
+            >
               {[
                 "Start a side hustle",
                 "Replace my job income",
@@ -523,7 +557,7 @@ export default function LeadGenForm() {
 
         <div className="space-y-2">
           <Label htmlFor="challenge">
-            Q4. What’s your biggest challenge in turning your skills into
+            Q4. What&apos;s your biggest challenge in turning your skills into
             income? *
           </Label>
           <Select
@@ -537,11 +571,15 @@ export default function LeadGenForm() {
             >
               <SelectValue placeholder="Select your challenge" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent
+              position="popper"
+              className="z-50 min-w-[200px]"
+              sideOffset={5}
+            >
               {[
                 "Not sure where to start",
                 "Struggle with confidence/clarity",
-                "Don’t know how to market myself",
+                "Don't know how to market myself",
                 "Lack of business strategy",
               ].map((option) => (
                 <SelectItem key={option} value={option}>
@@ -569,7 +607,11 @@ export default function LeadGenForm() {
             >
               <SelectValue placeholder="Select your comfort level" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent
+              position="popper"
+              className="z-50 min-w-[200px]"
+              sideOffset={5}
+            >
               {["Very comfortable", "Somewhat comfortable", "Not at all"].map(
                 (option) => (
                   <SelectItem key={option} value={option}>
@@ -599,7 +641,11 @@ export default function LeadGenForm() {
             >
               <SelectValue placeholder="Select your availability" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent
+              position="popper"
+              className="z-50 min-w-[200px]"
+              sideOffset={5}
+            >
               {[
                 "< 5 hrs/week",
                 "5–10 hrs/week",
@@ -633,7 +679,11 @@ export default function LeadGenForm() {
             >
               <SelectValue placeholder="Select an option" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent
+              position="popper"
+              className="z-50 min-w-[200px]"
+              sideOffset={5}
+            >
               {["Yes, send it to me!", "Not now"].map((option) => (
                 <SelectItem key={option} value={option}>
                   {option}
@@ -650,7 +700,7 @@ export default function LeadGenForm() {
   );
 
   return (
-    <Card className="border-border mx-auto max-w-2xl bg-red-100/75 font-sans shadow-lg backdrop-blur-md">
+    <Card className="border-border mx-auto w-full bg-red-100/75 font-sans shadow-lg backdrop-blur-md">
       <CardHeader className="text-center">
         <div className="mb-4 flex justify-center">
           <Badge variant="secondary" className="font-sans text-sm font-normal">
@@ -695,7 +745,7 @@ export default function LeadGenForm() {
           <Button
             type="button"
             onClick={handleNext}
-            className="bg-primary hover:bg-secondary flex items-center gap-2 transition-colors"
+            className="bg-primary hover:bg-secondary flex items-center gap-2 transition-colors hover:text-black"
             disabled={isSubmitting}
           >
             {isSubmitting ? (

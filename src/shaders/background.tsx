@@ -38,18 +38,20 @@ const ShaderBackground = memo(function ShaderBackground({
         {/* Background Shaders - Reduced complexity for better performance */}
         <MeshGradient
           className="absolute inset-0 h-full w-full"
-          colors={["#000000", "#ff3c38", "#ffffff", "#1a0000"]}
-          speed={0.1}
+          colors={["#000000", "#ff3c38", "#353535", "#1a0000"]}
+          speed={0.08}
         />
         {/* Second shader always present but with very low opacity to maintain consistency */}
         <MeshGradient
-          className="absolute inset-0 h-full w-full opacity-20"
-          colors={["#000000", "#ffffff", "#ff3c38"]}
-          speed={0.05}
+          className="absolute inset-0 h-full w-full opacity-15"
+          colors={["#000000", "#303030", "#ff3c38"]}
+          speed={0.04}
         />
       </div>
 
-      <div className="relative z-0 min-h-screen">{children}</div>
+      <div className="relative z-0 min-h-screen w-full max-w-full overflow-x-hidden">
+        {children}
+      </div>
     </>
   );
 });

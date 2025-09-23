@@ -4,6 +4,7 @@ import { Instrument_Serif } from "next/font/google";
 import "@/styles/globals.css";
 import FooterSection from "@/layout/footer";
 import { Toaster } from "@/components/ui/sonner";
+import ClientProviders from "@/provider/client-providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,9 +37,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} max-w-full overflow-x-hidden antialiased`}
       >
-        {children}
+        <ClientProviders>{children}</ClientProviders>
         <Toaster />
         <FooterSection />
       </body>
