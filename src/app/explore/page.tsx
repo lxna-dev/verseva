@@ -49,7 +49,7 @@ export default function Explore() {
   };
 
   return (
-    <div className="container m-auto w-full justify-center">
+    <div className="container m-auto w-full justify-center font-sans">
       <ShaderBackground>
         <AltHeader />
         <div className="container m-auto flex w-full items-center justify-center align-middle">
@@ -73,7 +73,10 @@ export default function Explore() {
                       {/* Form */}
                       <div className="space-y-4">
                         <div className="space-y-2">
-                          <Label htmlFor="full_name" className="text-white">
+                          <Label
+                            htmlFor="full_name"
+                            className="font-bold text-white"
+                          >
                             Full Name
                           </Label>
                           <Input
@@ -87,7 +90,10 @@ export default function Explore() {
                         </div>
 
                         <div className="space-y-2">
-                          <Label htmlFor="email" className="text-white">
+                          <Label
+                            htmlFor="email"
+                            className="font-bold text-white"
+                          >
                             Email Address
                           </Label>
                           <Input
@@ -136,7 +142,7 @@ export default function Explore() {
                     <div className="relative h-[480px] w-[380px] perspective-[1200px]">
                       {/* Left/Back Card */}
                       <div className="absolute top-0 left-0 z-10 h-full w-full translate-x-[-45px] translate-y-[-20px] rotate-[-8deg] transform">
-                        <div className="overflow-hidden rounded-lg border border-white/30 bg-white/20 shadow-lg">
+                        <div className="overflow-hidden rounded-lg">
                           <div className="relative h-full w-full overflow-hidden">
                             <Image
                               src="/worksheet/page2.webp"
@@ -154,7 +160,7 @@ export default function Explore() {
                       {/* Middle/Front Card (Featured) */}
                       <div className="absolute top-0 left-0 z-30 h-full w-full transform">
                         <div
-                          className="h-full w-full overflow-hidden rounded-lg border-2 border-white/40 bg-white/30 shadow-xl"
+                          className="h-full w-full overflow-hidden rounded-lg shadow-xl"
                           style={{ aspectRatio: "8.5/11" }}
                         >
                           <div className="relative h-full w-full">
@@ -176,7 +182,7 @@ export default function Explore() {
                       {/* Right/Back Card */}
                       <div className="absolute top-0 left-0 z-20 h-full w-full translate-x-[45px] translate-y-[-20px] rotate-[8deg] transform">
                         <div
-                          className="h-full w-full overflow-hidden rounded-lg border border-white/30 bg-white/20 shadow-lg"
+                          className="h-full w-full overflow-hidden rounded-lg"
                           style={{ aspectRatio: "8.5/11" }}
                         >
                           <div className="relative h-full w-full">
