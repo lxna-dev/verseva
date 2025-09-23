@@ -107,7 +107,7 @@ export default function Explore() {
                           size="lg"
                           onClick={handleSubmit}
                           disabled={!isValid || submitted}
-                          className={`bg-primary text-primary-foreground rounded-xl px-18 py-6 text-lg font-semibold transition-all duration-300 ${!isValid ? "cursor-not-allowed opacity-50" : "hover:bg-primary/90 hover:scale-105"} ${submitted ? "bg-green-600" : ""}`}
+                          className={`bg-primary text-primary-foreground w-full rounded-xl !px-12 py-6 text-lg font-semibold transition-all duration-300 md:w-auto ${!isValid ? "cursor-not-allowed opacity-50" : "hover:bg-primary/90 hover:scale-105"} ${submitted ? "bg-green-600" : ""}`}
                         >
                           {submitted ? (
                             <>
@@ -206,7 +206,7 @@ export default function Explore() {
             </section>
 
             {/* Section 3 - What's Inside */}
-            <section className="my-24 rounded-3xl bg-black/40 py-20 backdrop-blur-sm">
+            <section className="my-24 bg-black/40 py-20 backdrop-blur-sm">
               <div className="container mx-auto px-4">
                 <div className="mx-auto mb-16 max-w-4xl text-center">
                   <h2 className="mb-6 bg-gradient-to-r from-white via-white/90 to-white bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
@@ -304,21 +304,14 @@ export default function Explore() {
             <section className="py-20">
               <div className="container mx-auto px-4">
                 <div className="mx-auto max-w-4xl">
-                  <div className="flex flex-col items-center gap-16 md:flex-row">
+                  <div className="flex flex-wrap items-center">
                     <div className="md:w-2/5">
-                      <div className="relative">
-                        <div className="aspect-square overflow-hidden rounded-2xl border border-white/20 shadow-xl">
-                          <div className="from-primary/20 absolute inset-0 bg-gradient-to-br to-white/5 opacity-70"></div>
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="p-8 text-center">
-                              <h3 className="mb-4 text-3xl font-bold text-white">
-                                Who It&apos;s For
-                              </h3>
-                              <div className="bg-primary mx-auto mb-6 h-1 w-16 rounded-full"></div>
-                            </div>
-                          </div>
+                      <div className="relative mb-6">
+                        <div className="p-8 text-center">
+                          <h3 className="mb-4 text-3xl font-bold text-white">
+                            Who It&apos;s For
+                          </h3>
                         </div>
-                        <div className="bg-accent/20 absolute -right-6 -bottom-6 h-24 w-24 rounded-full blur-2xl"></div>
                       </div>
                     </div>
 

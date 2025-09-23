@@ -62,7 +62,7 @@ export default function Header() {
     >
       <div className="">
         <div className="container mx-auto flex justify-between px-4 py-3 md:px-10">
-          {/* Left side - Logo */}
+          {/* Left side */}
           <Image
             src="/Emblem_Negative.webp"
             alt="logo"
@@ -71,7 +71,7 @@ export default function Header() {
             className="shrink-0 md:h-[50px] md:w-[50px]"
           />
 
-          {/* Center - Links (Hidden on mobile) */}
+          {/* Center */}
           <div className="hidden flex-row items-center gap-6 rounded-full font-sans lg:flex">
             {Links.map((item) => (
               <div
@@ -89,9 +89,9 @@ export default function Header() {
             ))}
           </div>
 
-          {/* Right side - socials, email, button */}
+          {/* Right side */}
           <div className="flex flex-row items-center gap-2 md:gap-6">
-            {/* Socials (Hidden on mobile) */}
+            {/* Socials */}
             <div className="hidden flex-row gap-3 font-sans md:flex">
               {Socials.map((item) => (
                 <div
@@ -106,7 +106,7 @@ export default function Header() {
               ))}
             </div>
 
-            {/* Contact (Hidden on mobile) */}
+            {/* Contact*/}
             <div className="text-md hidden font-light text-white/80 xl:block">
               Get in touch: hello@verseva.com
             </div>
