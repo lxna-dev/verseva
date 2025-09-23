@@ -17,14 +17,13 @@ export default function AltHeader() {
   }, []);
 
   return (
-    <div className="fixed top-0 right-0 left-0 z-50 w-screen overflow-visible">
+    <div className="fixed top-0 right-0 left-0 z-50 overflow-visible">
       <header
         className={`w-full transition-all duration-300 ${
           scrolled
             ? "border-white/10 bg-black/20 backdrop-blur-md"
             : "border-transparent bg-transparent"
         }`}
-        style={{ width: "100vw" }}
       >
         <div className="mx-auto flex h-16 items-center justify-center">
           <Image

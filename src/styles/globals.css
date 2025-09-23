@@ -125,14 +125,14 @@
 html {
   scroll-behavior: smooth;
   height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
   /* Prevent layout shifts from scrollbar appearance */
-  scrollbar-gutter: stable;
-  /* Reserve space for scrollbar to prevent content shift */
-  width: 100vw;
+  scrollbar-gutter: stable both-edges;
   /* Force display with scrollbar even when not needed */
   overflow-y: scroll;
+  /* Prevent horizontal scrolling */
+  overflow-x: hidden;
+  /* Don't use viewport width which can cause shifts */
+  width: 100%;
 }
 
 body {
@@ -144,7 +144,8 @@ body {
   padding-right: 0 !important;
   /* Prevent content shift when Select components are opened */
   width: 100% !important;
-  max-width: 100vw;
+  /* Don't use viewport width which can cause shifts */
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -152,8 +153,10 @@ body {
 .container {
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* Ensure popovers don't affect layout flow */

@@ -49,9 +49,7 @@ const ShaderBackground = memo(function ShaderBackground({
         />
       </div>
 
-      <div className="relative z-0 min-h-screen w-full max-w-full overflow-x-hidden">
-        {children}
-      </div>
+      <div className="relative z-0 min-h-screen">{children}</div>
     </>
   );
 });
