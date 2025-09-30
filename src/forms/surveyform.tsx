@@ -117,7 +117,7 @@ function categorizeUser(
 export default function LeadGenForm() {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [redirectUrl, setRedirectUrl] = useState("/results");
+  // Removed unused redirectUrl state
   const [formData, setFormData] = useState<FormData>({
     full_name: "",
     email: "",
@@ -223,26 +223,7 @@ export default function LeadGenForm() {
     formData.actionPlan,
   ]);
 
-  const handleNext = useCallback(() => {
-    let isValid = false;
-
-    if (currentStep === 1) isValid = validateStep1();
-    else if (currentStep === 2) isValid = validateStep2();
-    else if (currentStep === 3) isValid = validateStep3();
-
-    if (isValid && currentStep < 3) {
-      setCurrentStep((prev) => prev + 1);
-    } else if (isValid && currentStep === 3) {
-      handleSubmit();
-    }
-  }, [currentStep, validateStep1, validateStep2, validateStep3]);
-
-  const handleBack = useCallback(() => {
-    if (currentStep > 1) {
-      setCurrentStep((prev) => prev - 1);
-    }
-  }, [currentStep]);
-
+  // Define handleSubmit before it's used in handleNext
   const handleSubmit = useCallback(async () => {
     setIsSubmitting(true);
     const result = categorizeUser(
@@ -263,7 +244,6 @@ export default function LeadGenForm() {
     localStorage.setItem("surveyResults", JSON.stringify(surveyResults));
 
     toast("Survey Submitted Successfully!");
-    setRedirectUrl("/results");
 
     window.location.href = "/results";
 
@@ -281,6 +261,28 @@ export default function LeadGenForm() {
       console.error("Submit error:", err);
     }
   }, [formData]);
+
+  const handleNext = useCallback(() => {
+    let isValid = false;
+
+    if (currentStep === 1) isValid = validateStep1();
+    else if (currentStep === 2) isValid = validateStep2();
+    else if (currentStep === 3) isValid = validateStep3();
+
+    if (isValid && currentStep < 3) {
+      setCurrentStep((prev) => prev + 1);
+    } else if (isValid && currentStep === 3) {
+      handleSubmit();
+    }
+  }, [currentStep, validateStep1, validateStep2, validateStep3, handleSubmit]);
+
+  const handleBack = useCallback(() => {
+    if (currentStep > 1) {
+      setCurrentStep((prev) => prev - 1);
+    }
+  }, [currentStep]);
+
+  // handleSubmit has been moved up above handleNext
 
   const handleCountryChange = useCallback(
     (country: string) => {
