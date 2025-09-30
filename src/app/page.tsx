@@ -2,10 +2,13 @@
 
 import InView from "@/animations/inview";
 import { Button } from "@/components/ui/button";
+import AboutUs from "@/layout/aboutus";
 import BookWithUs from "@/layout/bookwithus";
-import CaseStudy from "@/layout/case-study";
+// Case Study temporarily hidden as requested
+// import CaseStudy from "@/layout/case-study";
 import Header from "@/layout/header";
 import Hero from "@/layout/hero";
+import Insights from "@/layout/insights";
 import Services from "@/layout/services";
 import ShaderBackground from "@/shaders/background";
 import { useRouter } from "next/navigation";
@@ -33,9 +36,23 @@ export default function Home() {
         </InView>
       </div>
 
+      {/* Case Study section temporarily hidden
       <div id="case-studies" className="">
         <InView>
           <CaseStudy />
+        </InView>
+      </div>
+      */}
+
+      <div id="about-us">
+        <InView>
+          <AboutUs />
+        </InView>
+      </div>
+
+      <div id="insights">
+        <InView>
+          <Insights />
         </InView>
       </div>
 

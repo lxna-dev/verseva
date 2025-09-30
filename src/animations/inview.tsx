@@ -10,7 +10,7 @@ type InViewProps = {
 
 export default function InView({ children }: InViewProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "0px 0px -35% 0px" });
+  const isInView = useInView(ref, { once: false, margin: "0px 0px -25% 0px" });
 
   return (
     <motion.div

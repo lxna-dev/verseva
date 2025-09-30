@@ -13,45 +13,46 @@ export default function Services() {
     <section id="services" className="relative scroll-mt-32 px-4 py-24">
       <div className="mx-auto max-w-7xl">
         <h2 className="mb-16 text-center text-4xl font-bold text-white md:text-5xl">
-          Is this for you?
+          What We Do
         </h2>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {/* Strategic Planning */}
+          {/* Recruitment & Augmentation */}
           <div className="card-gradient-red">
             <div className="mb-4 flex items-center justify-between">
               <div className="icon-container">
-                <Target className="h-6 w-6 text-black" />
+                <Users className="h-6 w-6 text-black" />
               </div>
               <div className="badge-green">Core Service</div>
             </div>
             <h3 className="mb-2 text-xl font-bold text-white">
-              Strategic Planning
+              Recruitment & Augmentation
             </h3>
             <p className="text-sm text-gray-200">
-              Comprehensive business strategy development and market positioning
-              to accelerate growth.
+              Fill gaps fast with top Asian talent from the Philippines and
+              beyond. We source and embed specialists to strengthen your team
+              from day one.
             </p>
           </div>
 
-          {/* Operations Optimization */}
+          {/* Fractional Teams */}
           <div className="card-gradient-red">
             <div className="mb-4 flex items-center justify-between">
               <div className="icon-container">
-                <Settings className="h-6 w-6 text-black" />
+                <Users className="h-6 w-6 text-black" />
               </div>
               <div className="badge-blue">Popular</div>
             </div>
             <h3 className="mb-2 text-xl font-bold text-white">
-              Operations Optimization
+              Fractional Teams
             </h3>
             <p className="text-sm text-gray-200">
-              Streamline processes, eliminate inefficiencies, and build scalable
-              operational frameworks.
+              Flexible, scalable teams that work on your schedule. Our Asian
+              specialists deliver quality work across various skill sets.
             </p>
           </div>
 
-          {/* Growth Acceleration */}
+          {/* Fractional Leadership */}
           <div className="card-gradient-red">
             <div className="mb-4 flex items-center justify-between">
               <div className="icon-container">
@@ -60,62 +61,63 @@ export default function Services() {
               <div className="badge-purple">High Impact</div>
             </div>
             <h3 className="mb-2 text-xl font-bold text-white">
-              Growth Acceleration
+              Fractional Leadership
             </h3>
             <p className="text-sm text-gray-200">
-              Revenue optimization strategies and market expansion planning for
-              rapid scaling.
+              Experienced Asian leaders who bring strategic direction and
+              management expertise without the full-time commitment.
             </p>
           </div>
 
-          {/* Team Development */}
+          {/* For Clients */}
           <div className="card-gradient-red">
             <div className="mb-4 flex items-center justify-between">
               <div className="icon-container">
-                <Users className="h-6 w-6 text-black" />
+                <Target className="h-6 w-6 text-black" />
               </div>
-              <div className="badge-orange">Essential</div>
+              <div className="badge-orange">For Clients</div>
             </div>
             <h3 className="mb-2 text-xl font-bold text-white">
-              Team Development
+              Case Studies & Success
             </h3>
             <p className="text-sm text-gray-200">
-              Leadership coaching and organizational development to build
-              high-performing teams.
+              See how our teams have improved product delivery and marketing for
+              companies like Gymlete. Book a consultation to discuss your needs.
             </p>
           </div>
 
-          {/* Performance Analytics */}
+          {/* For Talent */}
           <div className="card-gradient-red">
             <div className="mb-4 flex items-center justify-between">
               <div className="icon-container">
                 <BarChart3 className="h-6 w-6 text-black" />
               </div>
-              <div className="badge-cyan">Data-Driven</div>
+              <div className="badge-cyan">For Talent</div>
             </div>
             <h3 className="mb-2 text-xl font-bold text-white">
-              Performance Analytics
+              Join Our Talent Pool
             </h3>
             <p className="text-sm text-gray-200">
-              KPI tracking, business intelligence setup, and data-driven
-              decision frameworks.
+              Quick CV uploads and simplified application forms for open
+              fractional roles. Join our global community of Asian
+              professionals.
             </p>
           </div>
 
-          {/* Innovation Strategy */}
+          {/* About Us */}
           <div className="card-gradient-red">
             <div className="mb-4 flex items-center justify-between">
               <div className="icon-container">
                 <Lightbulb className="h-6 w-6 text-black" />
               </div>
-              <div className="badge-yellow">Future-Ready</div>
+              <div className="badge-yellow">About Us</div>
             </div>
             <h3 className="mb-2 text-xl font-bold text-white">
-              Innovation Strategy
+              Our Story & Mission
             </h3>
             <p className="text-sm text-gray-200">
-              Digital transformation roadmaps and emerging technology
-              integration planning.
+              From personal branding to fractional teams, we're committed to
+              empowering Asian talent and creating high-performance teams.
             </p>
           </div>
         </div>
@@ -123,13 +125,13 @@ export default function Services() {
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
           <p className="mb-8 text-xl text-gray-200">
-            You didn’t find us by accident.
+            Accelerate your growth with Verseva.
           </p>
           <Button
             className="text-md cursor-pointer rounded-full p-6 font-sans font-light"
             variant="default"
           >
-            Schedule Your Strategy Session
+            Book a Discovery Call
           </Button>
         </div>
       </div>
