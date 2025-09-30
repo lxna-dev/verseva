@@ -1,7 +1,7 @@
 "use client";
 
 import InView from "@/animations/inview";
-import { Button } from "@/components/ui/button";
+// Removing unused Button import
 import AboutUs from "@/layout/aboutus";
 import BookWithUs from "@/layout/bookwithus";
 // Case Study temporarily hidden as requested
@@ -11,10 +11,10 @@ import Hero from "@/layout/hero";
 import Insights from "@/layout/insights";
 import Services from "@/layout/services";
 import ShaderBackground from "@/shaders/background";
-import { useRouter } from "next/navigation";
+// Removing unused useRouter import
 
 export default function Home() {
-  const router = useRouter();
+  // Removed unused router const
   return (
     <ShaderBackground>
       <div

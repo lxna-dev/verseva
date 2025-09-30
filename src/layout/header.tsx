@@ -3,9 +3,8 @@
 import { Button } from "@/components/ui/button";
 import DiscordAltIcon from "@/icons/Discord";
 import TwitterXIcon from "@/icons/X";
-import { Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Instagram, Youtube } from "lucide-react";
 import Image from "next/image";
-import { title } from "process";
 import React from "react";
 
 import { useEffect, useState } from "react";

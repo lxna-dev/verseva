@@ -5,14 +5,14 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 export default function Hero() {
-  const [hasResults, setHasResults] = useState(false);
+  // Removed unused hasResults state
   const [destination, setDestination] = useState("/explore");
   const [buttonText, setButtonText] = useState("Get Your Free Worksheet");
 
   useEffect(() => {
     const storedResults = localStorage.getItem("surveyResults");
     const hasStoredResults = !!storedResults;
-    setHasResults(hasStoredResults);
+    // No longer setting hasResults as it's not used
     setDestination(hasStoredResults ? "/results" : "/explore");
     setButtonText(
       hasStoredResults ? "View Your Results" : "Get Your Free Worksheet",

@@ -13,7 +13,7 @@ export default function AboutUs() {
             Our Story
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-white/70">
-            From personal branding to fractional teams, we're committed to
+            From personal branding to fractional teams, we&apos;re committed to
             empowering Asian talent on the global stage.
           </p>
         </div>
@@ -28,7 +28,7 @@ export default function AboutUs() {
               <p className="leading-relaxed text-white/80">
                 Verseva evolved from a personal branding agency to a platform
                 for fractional teams, drawing inspiration from high-performance
-                teams in Formula 1 and global tech. We're committed to
+                teams in Formula 1 and global tech. We&apos;re committed to
                 connecting elite Asian talent with global opportunities.
               </p>
             </div>
