@@ -29,9 +29,9 @@ export default function Hero() {
       </div>
 
       <h1 className="relative px-4 font-sans text-4xl text-white sm:text-5xl md:text-6xl lg:text-7xl">
-        <span className="instrument italic">Elite</span>{" "}
+        <span className="instrument">Elite</span>{" "}
         <span className="font-bold">Talent</span>. <br />
-        <span className="instrument italic">Engineered</span>{" "}
+        <span className="instrument">Engineered</span>{" "}
         <span className="font-bold">Impact</span>
       </h1>
 
