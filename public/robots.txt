@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Primary site sections
+Allow: /explore
+Allow: /journey
+Allow: /#book-with-us
+
+# Disallow any potential undraw image paths that might be indexed incorrectly
+Disallow: /undraw
+Disallow: */undraw_*
+
+# Sitemap location
+Sitemap: https://verseva.com/sitemap.xml
