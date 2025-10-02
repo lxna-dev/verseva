@@ -53,9 +53,9 @@ export default function FooterSection() {
                 </span>
               </div>
               <p className="max-w-md text-sm leading-relaxed text-white/70">
-                Transform your business with strategic consulting that delivers
-                measurable results. We help companies scale sustainably through
-                proven frameworks and execution.
+                We connect you with elite talent for lean teams, leadership, and
+                specialized recruitment that delivers measurable results for
+                your global business.
               </p>
             </div>
 

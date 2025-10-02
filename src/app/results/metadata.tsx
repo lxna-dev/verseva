@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Verseva | Your Personal Brand Profile Results",
+  title: "VERSEVA | Your Personal Brand Profile Results",
   description:
     "View your personalized brand profile results based on your worksheet responses. Get tailored recommendations and next steps for your brand journey.",
   keywords: [
@@ -12,20 +12,20 @@ export const metadata: Metadata = {
     "brand strategy",
     "brand growth",
   ],
-  authors: [{ name: "Verseva" }],
-  creator: "Verseva",
+  authors: [{ name: "VERSEVA" }],
+  creator: "VERSEVA",
   openGraph: {
-    title: "Verseva | Your Personal Brand Profile Results",
+    title: "VERSEVA | Your Personal Brand Profile Results",
     description:
       "Access your personalized brand assessment results and tailored recommendations to grow your personal brand.",
     url: "https://verseva.com/results",
-    siteName: "Verseva",
+    siteName: "VERSEVA",
     images: [
       {
-        url: "/worksheet/page1.webp",
+        url: "https://verseva.com/Emblem_Negative.webp",
         width: 1200,
         height: 630,
-        alt: "Personal Brand Profile Results by Verseva",
+        alt: "VERSEVA - Elite Talent. Engineered Impact.",
       },
     ],
     locale: "en_US",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Your Personal Brand Profile Results",
     description:
       "Access your personalized brand assessment results and tailored recommendations to grow your personal brand.",
-    images: ["/worksheet/page1.webp"],
+    images: ["https://verseva.com/Emblem_Negative.webp"],
     creator: "@verseva",
   },
   robots: {

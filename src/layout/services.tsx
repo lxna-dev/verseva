@@ -29,9 +29,8 @@ export default function Services() {
               Recruitment & Augmentation
             </h3>
             <p className="text-sm text-gray-200">
-              Fill gaps fast with top Asian talent from the Philippines and
-              beyond. We source and embed specialists to strengthen your team
-              from day one.
+              Fill gaps fast with top talent. We source and embed specialists to
+              strengthen your team from day one.
             </p>
           </div>
 
@@ -47,7 +46,7 @@ export default function Services() {
               Fractional Teams
             </h3>
             <p className="text-sm text-gray-200">
-              Flexible, scalable teams that work on your schedule. Our Asian
+              Flexible, scalable teams that work on your schedule. Our
               specialists deliver quality work across various skill sets.
             </p>
           </div>
@@ -64,8 +63,8 @@ export default function Services() {
               Fractional Leadership
             </h3>
             <p className="text-sm text-gray-200">
-              Experienced Asian leaders who bring strategic direction and
-              management expertise without the full-time commitment.
+              Experienced leaders who bring strategic direction and management
+              expertise without the full-time commitment.
             </p>
           </div>
 
@@ -99,8 +98,7 @@ export default function Services() {
             </h3>
             <p className="text-sm text-gray-200">
               Quick CV uploads and simplified application forms for open
-              fractional roles. Join our global community of Asian
-              professionals.
+              fractional roles. Join our global community of professionals.
             </p>
           </div>
 
@@ -117,7 +115,7 @@ export default function Services() {
             </h3>
             <p className="text-sm text-gray-200">
               From personal branding to fractional teams, we&apos;re committed
-              to empowering Asian talent and creating high-performance teams.
+              to empowering talent and creating high-performance teams.
             </p>
           </div>
         </div>

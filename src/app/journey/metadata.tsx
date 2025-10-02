@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Verseva | Complete Your Personal Brand Worksheet",
+  title: "VERSEVA | Complete Your Personal Brand Worksheet",
   description:
     "Complete your personal brand worksheet to gain clarity, understand your audience, and develop a strategic approach to your brand.",
   keywords: [
@@ -12,20 +12,20 @@ export const metadata: Metadata = {
     "messaging",
     "brand vision",
   ],
-  authors: [{ name: "Verseva" }],
-  creator: "Verseva",
+  authors: [{ name: "VERSEVA" }],
+  creator: "VERSEVA",
   openGraph: {
-    title: "Verseva | Complete Your Personal Brand Worksheet",
+    title: "VERSEVA | Complete Your Personal Brand Worksheet",
     description:
       "Answer a few strategic questions to gain clarity for your brand and receive your personalized brand worksheet.",
     url: "https://verseva.com/journey",
-    siteName: "Verseva",
+    siteName: "VERSEVA",
     images: [
       {
-        url: "/worksheet/page1.webp",
+        url: "https://verseva.com/Emblem_Negative.webp",
         width: 1200,
         height: 630,
-        alt: "Personal Brand Worksheet by Verseva",
+        alt: "VERSEVA - Elite Talent. Engineered Impact.",
       },
     ],
     locale: "en_US",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Complete Your Personal Brand Worksheet",
     description:
       "Answer a few strategic questions to gain clarity for your brand and receive your personalized worksheet.",
-    images: ["/worksheet/page1.webp"],
+    images: ["https://verseva.com/Emblem_Negative.webp"],
     creator: "@verseva",
   },
   robots: {

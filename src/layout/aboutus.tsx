@@ -14,7 +14,7 @@ export default function AboutUs() {
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-white/70">
             From personal branding to fractional teams, we&apos;re committed to
-            empowering Asian talent on the global stage.
+            empowering talent on the global stage.
           </p>
         </div>
 
@@ -26,10 +26,10 @@ export default function AboutUs() {
                 The Verseva Journey
               </h3>
               <p className="leading-relaxed text-white/80">
-                Verseva evolved from a personal branding agency to a platform
-                for fractional teams, drawing inspiration from high-performance
-                teams in Formula 1 and global tech. We&apos;re committed to
-                connecting elite Asian talent with global opportunities.
+                Verseva evolved from a social media marketing agency to a
+                platform for fractional teams, drawing inspiration from
+                high-performance teams in the global tech space. We&apos;re
+                committed to connecting elite talent with global opportunities.
               </p>
             </div>
 
@@ -37,16 +37,16 @@ export default function AboutUs() {
               <h3 className="text-2xl font-semibold text-white">Our Mission</h3>
               <p className="leading-relaxed text-white/80">
                 To accelerate business growth by connecting companies with elite
-                Asian talent through flexible, high-performance fractional teams
-                and leadership.
+                talent through flexible, high-performance fractional teams and
+                leadership.
               </p>
             </div>
 
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold text-white">Our Vision</h3>
               <p className="leading-relaxed text-white/80">
-                A world where global companies and Asian professionals thrive
-                together through flexible work arrangements that deliver
+                A world where global companies and ambitious professionals
+                thrive together through flexible work arrangements that deliver
                 exceptional value.
               </p>
             </div>
@@ -65,11 +65,11 @@ export default function AboutUs() {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium text-white">
-                    Asian Excellence
+                    Absolute Excellence
                   </h4>
                   <p className="text-white/70">
-                    Celebrating the exceptional talent and work ethic of Asian
-                    professionals.
+                    Celebrating the exceptional talent and work ethic of
+                    ambitious professionals.
                   </p>
                 </div>
               </div>
@@ -80,7 +80,7 @@ export default function AboutUs() {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium text-white">
-                    Global Excellence
+                    Global Caliber
                   </h4>
                   <p className="text-white/70">
                     Delivering world-class solutions that meet international
@@ -112,8 +112,8 @@ export default function AboutUs() {
                     Precision & Velocity
                   </h4>
                   <p className="text-white/70">
-                    Delivering with speed and accuracy, just like a
-                    high-performance racing team.
+                    Delivering with speed and accuracy, with talents engineered
+                    for peak performance.
                   </p>
                 </div>
               </div>

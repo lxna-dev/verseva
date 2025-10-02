@@ -37,8 +37,8 @@ export default function Hero() {
 
       <p className="m-auto mt-4 max-w-xl px-4 text-sm text-white/80 sm:text-base">
         Fractional teams that accelerate your growth. We connect you with elite
-        Asian talent for fractional teams, leadership, and specialized
-        recruitment that delivers measurable results for your global business.
+        talent for fractional teams, leadership, and specialized recruitment
+        that delivers measurable results for your global business.
       </p>
 
       <div className="flex flex-col justify-center gap-3 px-4 pt-8 font-sans sm:flex-row">

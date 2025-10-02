@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Verseva | Personal Brand Worksheet - Gain Clarity for Your Brand",
+  title: "VERSEVA | Personal Brand Worksheet - Gain Clarity for Your Brand",
   description:
     "Free Personal Brand Worksheet that helps you define your vision, understand your audience, and sharpen your messaging so your brand grows with purpose.",
   keywords: [
@@ -13,20 +13,20 @@ export const metadata: Metadata = {
     "audience clarity",
     "business growth",
   ],
-  authors: [{ name: "Verseva" }],
-  creator: "Verseva",
+  authors: [{ name: "VERSEVA" }],
+  creator: "VERSEVA",
   openGraph: {
-    title: "Verseva | Personal Brand Worksheet - Gain Clarity for Your Brand",
+    title: "VERSEVA | Personal Brand Worksheet - Gain Clarity for Your Brand",
     description:
       "This free worksheet helps you define your vision, understand your audience, and sharpen your messaging so your brand grows with purpose.",
     url: "https://verseva.com/explore",
-    siteName: "Verseva",
+    siteName: "VERSEVA",
     images: [
       {
-        url: "/worksheet/page1.webp",
+        url: "https://verseva.com/Emblem_Negative.webp",
         width: 1200,
         height: 630,
-        alt: "Personal Brand Worksheet by Verseva",
+        alt: "Verseva - Elite Talent. Engineered Impact.",
       },
     ],
     locale: "en_US",
@@ -34,10 +34,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Personal Brand Worksheet by Verseva",
+    title: "Free Personal Brand Worksheet by VERSEVA",
     description:
       "Define your vision, understand your audience, and sharpen your messaging.",
-    images: ["/worksheet/page1.webp"],
+    images: ["https://verseva.com/Emblem_Negative.webp"],
     creator: "@verseva",
   },
 };
