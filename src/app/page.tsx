@@ -8,7 +8,7 @@ import BookWithUs from "@/layout/bookwithus";
 // import CaseStudy from "@/layout/case-study";
 import Header from "@/layout/header";
 import Hero from "@/layout/hero";
-import Insights from "@/layout/insights";
+// import Insights from "@/layout/insights";
 import Services from "@/layout/services";
 import ShaderBackground from "@/shaders/background";
 // Removing unused useRouter import
@@ -50,11 +50,13 @@ export default function Home() {
         </InView>
       </div>
 
+      {/* Insights section temporarily hidden
       <div id="insights">
         <InView>
           <Insights />
         </InView>
       </div>
+      */}
 
       <div id="book-with-us">
         <InView>

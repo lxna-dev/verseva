@@ -28,7 +28,8 @@ const Links = [
   { title: "Back to Top", href: "#top" },
   { title: "Services", href: "#services" },
   { title: "About Us", href: "#about-us" },
-  { title: "Insights", href: "#insights" },
+  // Insights temporarily hidden
+  // { title: "Insights", href: "#insights" },
   { title: "Contact", href: "#book-with-us" },
 ];
 

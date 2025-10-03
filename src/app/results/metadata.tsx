@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     creator: "@verseva",
   },
   robots: {
-    index: false, // Don't index results page since it's personalized
+    index: false,
     follow: true,
     nocache: true,
   },
