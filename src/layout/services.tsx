@@ -34,7 +34,7 @@ export default function Services() {
             </p>
           </div>
 
-          {/* Fractional Teams */}
+          {/* Lean Teams */}
           <div className="card-gradient-red">
             <div className="mb-4 flex items-center justify-between">
               <div className="icon-container">
@@ -42,9 +42,7 @@ export default function Services() {
               </div>
               <div className="badge-blue">Popular</div>
             </div>
-            <h3 className="mb-2 text-xl font-bold text-white">
-              Fractional Teams
-            </h3>
+            <h3 className="mb-2 text-xl font-bold text-white">Lean Teams</h3>
             <p className="text-sm text-gray-200">
               Flexible, scalable teams that work on your schedule. Our
               specialists deliver quality work across various skill sets.
@@ -97,8 +95,8 @@ export default function Services() {
               Join Our Talent Pool
             </h3>
             <p className="text-sm text-gray-200">
-              Quick CV uploads and simplified application forms for open
-              fractional roles. Join our global community of professionals.
+              Quick CV uploads and simplified application forms for open Lean
+              roles. Join our global community of professionals.
             </p>
           </div>
 
@@ -114,8 +112,8 @@ export default function Services() {
               Our Story & Mission
             </h3>
             <p className="text-sm text-gray-200">
-              From personal branding to fractional teams, we&apos;re committed
-              to empowering talent and creating high-performance teams.
+              From personal branding to Lean Teams, we&apos;re committed to
+              empowering talent and creating high-performance teams.
             </p>
           </div>
         </div>

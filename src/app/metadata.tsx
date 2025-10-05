@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "VERSEVA | Elite Talent & Fractional Teams",
+  title: "VERSEVA | Elite Talent & Lean Teams",
   description:
-    "Accelerate your business growth with elite talent. Our fractional teams, leadership, and recruitment services deliver measurable results for global companies.",
+    "Accelerate your business growth with elite talent. Our Lean Teams, leadership, and recruitment services deliver measurable results for global companies.",
   keywords: [
-    "fractional teams",
+    "Lean Teams",
     "talent solutions",
     "recruitment services",
     "business growth strategy",
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   creator: "VERSEVA",
   publisher: "VERSEVA",
   openGraph: {
-    title: "VERSEVA | Elite Talent & Fractional Teams",
+    title: "VERSEVA | Elite Talent & Fractional Leadership",
     description:
-      "Accelerate your growth with elite talent through flexible fractional teams that deliver measurable results globally.",
+      "Accelerate your growth with elite talent through flexible Lean Teams that deliver measurable results globally.",
     url: "https://verseva.com",
     siteName: "VERSEVA",
     locale: "en_US",
@@ -40,9 +40,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "VERSEVA | Elite Talent. Engineered Impact.",
+    title: "VERSEVA | Elite Talent & Fractional Leadership",
     description:
-      "Get Your Free Worksheet | Book Strategy Call | Explore Talent Solutions | Accelerate your business with fractional teams.",
+      "Get Your Free Worksheet | Book Strategy Call | Explore Talent Solutions | Accelerate your business with Lean Teams.",
     images: ["https://verseva.com/Emblem_Negative.webp"],
     creator: "@verseva",
   },

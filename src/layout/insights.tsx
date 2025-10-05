@@ -5,7 +5,7 @@ import Link from "next/link";
 const blogPosts = [
   {
     id: 1,
-    title: "Managing Fractional Teams Across Time Zones",
+    title: "Managing Lean Teams Across Time Zones",
     excerpt:
       "Best practices for coordinating distributed teams and maintaining productivity across different regions.",
     category: "Team Management",
@@ -32,7 +32,7 @@ const blogPosts = [
   },
   {
     id: 4,
-    title: "Case Study: Gymlete's 60% Growth with Fractional Teams",
+    title: "Case Study: Gymlete's 60% Growth with Lean Teams",
     excerpt:
       "How a fitness tech startup accelerated product development and marketing initiatives through strategic talent augmentation.",
     category: "Success Story",
@@ -50,8 +50,8 @@ export default function Insights() {
             Insights
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-white/70">
-            Thought leadership and practical advice on outsourcing, fractional
-            teams, and building high-performance work practices.
+            Thought leadership and practical advice on outsourcing, Lean Teams,
+            and building high-performance work practices.
           </p>
         </div>
 

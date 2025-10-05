@@ -24,7 +24,7 @@ export default function Hero() {
       <div className="relative mb-4 inline-flex items-center rounded-full bg-white/5 px-3 py-1 backdrop-blur-sm">
         <div className="absolute top-0 right-1 left-1 h-px rounded-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         <span className="relative z-10 text-xs font-light text-white/90 sm:text-sm">
-          ✨ Verseva | Fractional Teams That Accelerate Growth
+          ✨ Verseva | Lean Teams That Accelerate Growth
         </span>
       </div>
 
@@ -36,9 +36,9 @@ export default function Hero() {
       </h1>
 
       <p className="m-auto mt-4 max-w-xl px-4 text-sm text-white/80 sm:text-base">
-        Fractional teams that accelerate your growth. We connect you with elite
-        talent for fractional teams, leadership, and specialized recruitment
-        that delivers measurable results for your global business.
+        Lean Teams that accelerate your growth. We connect you with elite talent
+        for Lean Teams, leadership, and specialized recruitment that delivers
+        measurable results for your global business.
       </p>
 
       <div className="flex flex-col justify-center gap-3 px-4 pt-8 font-sans sm:flex-row">

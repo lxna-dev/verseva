@@ -25,11 +25,11 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Verseva | Elite Asian Talent & Fractional Teams",
+  title: "Verseva | Elite Talent & Fractional Leadership",
   description:
-    "Connect with elite Asian talent through our flexible fractional teams, leadership, and recruitment services. Accelerate your business growth with specialized expertise that delivers measurable results globally.",
+    "Connect with elite Asian talent through our flexible Lean Teams, leadership, and recruitment services. Accelerate your business growth with specialized expertise that delivers measurable results globally.",
   keywords: [
-    "fractional teams",
+    "Lean Teams",
     "Asian talent",
     "recruitment",
     "augmentation",
@@ -60,9 +60,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Verseva | Elite Asian Talent & Fractional Teams",
+    title: "Verseva | Elite Talent & Fractional Leadership",
     description:
-      "Connect with elite Asian talent through our flexible fractional teams, leadership, and recruitment services that deliver measurable results.",
+      "Connect with elite Asian talent through our flexible Lean Teams, leadership, and recruitment services that deliver measurable results.",
     url: "https://verseva.com",
     siteName: "Verseva",
     locale: "en_US",
@@ -78,9 +78,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Verseva | Elite Asian Talent & Fractional Teams",
+    title: "Verseva | Elite Talent & Fractional Leadership",
     description:
-      "Accelerate your growth with elite Asian talent through flexible fractional teams and specialized expertise.",
+      "Accelerate your growth with elite Asian talent through flexible Lean Teams and specialized expertise.",
     images: ["/Emblem_Negative.webp"],
     creator: "@verseva",
   },

@@ -13,7 +13,7 @@ export default function AboutUs() {
             Our Story
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-white/70">
-            From personal branding to fractional teams, we&apos;re committed to
+            From personal branding to Lean Teams, we&apos;re committed to
             empowering talent on the global stage.
           </p>
         </div>
@@ -27,7 +27,7 @@ export default function AboutUs() {
               </h3>
               <p className="leading-relaxed text-white/80">
                 Verseva evolved from a social media marketing agency to a
-                platform for fractional teams, drawing inspiration from
+                platform for Lean Teams, drawing inspiration from
                 high-performance teams in the global tech space. We&apos;re
                 committed to connecting elite talent with global opportunities.
               </p>
@@ -37,7 +37,7 @@ export default function AboutUs() {
               <h3 className="text-2xl font-semibold text-white">Our Mission</h3>
               <p className="leading-relaxed text-white/80">
                 To accelerate business growth by connecting companies with elite
-                talent through flexible, high-performance fractional teams and
+                talent through flexible, high-performance Lean Teams and
                 leadership.
               </p>
             </div>
