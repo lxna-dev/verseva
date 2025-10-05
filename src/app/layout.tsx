@@ -2,9 +2,16 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Instrument_Serif } from "next/font/google";
 import "@/styles/globals.css";
-import FooterSection from "@/layout/footer";
 import { Toaster } from "@/components/ui/sonner";
-import ClientProviders from "@/provider/client-providers";
+import dynamic from "next/dynamic";
+
+// Lazy load components that aren't needed for initial render
+const ClientProviders = dynamic(() => import("@/provider/client-providers"));
+
+// Lazy load footer which appears below the fold
+const FooterSection = dynamic(() => import("@/layout/footer"), {
+  loading: () => <div className="h-24 w-full bg-black/20"></div>,
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

@@ -1,20 +1,25 @@
 "use client";
 
+import { Suspense, lazy } from "react";
 import InView from "@/animations/inview";
-// Removing unused Button import
-import AboutUs from "@/layout/aboutus";
-import BookWithUs from "@/layout/bookwithus";
-// Case Study temporarily hidden as requested
-// import CaseStudy from "@/layout/case-study";
+// Critical path imports - immediate load
 import Header from "@/layout/header";
 import Hero from "@/layout/hero";
-// import Insights from "@/layout/insights";
-import Services from "@/layout/services";
 import ShaderBackground from "@/shaders/background";
-// Removing unused useRouter import
+
+// Lazy load below-the-fold components
+const Services = lazy(() => import("@/layout/services"));
+const AboutUs = lazy(() => import("@/layout/aboutus"));
+const BookWithUs = lazy(() => import("@/layout/bookwithus"));
+
+// Loading fallbacks for suspense
+const SectionFallback = () => (
+  <div className="flex h-64 w-full items-center justify-center p-12">
+    <div className="h-12 w-12 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+  </div>
+);
 
 export default function Home() {
-  // Removed unused router const
   return (
     <ShaderBackground>
       <div
@@ -31,37 +36,31 @@ export default function Home() {
       </div>
 
       <div id="services">
-        <InView>
-          <Services />
-        </InView>
+        <Suspense fallback={<SectionFallback />}>
+          <InView>
+            <Services />
+          </InView>
+        </Suspense>
       </div>
 
-      {/* Case Study section temporarily hidden
-      <div id="case-studies" className="">
-        <InView>
-          <CaseStudy />
-        </InView>
-      </div>
-      */}
+      {/* Case Study section temporarily hidden */}
 
       <div id="about-us">
-        <InView>
-          <AboutUs />
-        </InView>
+        <Suspense fallback={<SectionFallback />}>
+          <InView>
+            <AboutUs />
+          </InView>
+        </Suspense>
       </div>
 
-      {/* Insights section temporarily hidden
-      <div id="insights">
-        <InView>
-          <Insights />
-        </InView>
-      </div>
-      */}
+      {/* Insights section temporarily hidden */}
 
       <div id="book-with-us">
-        <InView>
-          <BookWithUs />
-        </InView>
+        <Suspense fallback={<SectionFallback />}>
+          <InView>
+            <BookWithUs />
+          </InView>
+        </Suspense>
       </div>
     </ShaderBackground>
   );
