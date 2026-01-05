@@ -6,6 +6,7 @@ import InView from "@/animations/inview";
 import Header from "@/layout/header";
 import Hero from "@/layout/hero";
 import ShaderBackground from "@/shaders/background";
+import Newsletter from "@/layout/newsletter";
 
 // Lazy load below-the-fold components
 const Services = lazy(() => import("@/layout/services"));
@@ -55,10 +56,18 @@ export default function Home() {
 
       {/* Insights section temporarily hidden */}
 
-      <div id="book-with-us">
+      {/* <div id="book-with-us">
         <Suspense fallback={<SectionFallback />}>
           <InView>
             <BookWithUs />
+          </InView>
+        </Suspense>
+      </div> */}
+
+      <div id="newsletter">
+        <Suspense fallback={<SectionFallback />}>
+          <InView>
+            <Newsletter />
           </InView>
         </Suspense>
       </div>

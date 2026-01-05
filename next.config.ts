@@ -1,11 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Optimize images
   images: {
-    domains: [
-      "img.youtube.com", // Allow YouTube thumbnails
-      "i.ytimg.com", // Alternative YouTube image domain
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "img.youtube.com", // Allow YouTube thumbnails
+      },
+      {
+        protocol: "https",
+        hostname: "i.ytimg.com", // Alternative YouTube image domain
+      },
     ],
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60,
@@ -19,9 +24,6 @@ const nextConfig: NextConfig = {
   // Enable gzip compression
   compress: true,
 
-  // Optimize bundle size
-  swcMinify: true,
-
   // Optimize for production builds
   productionBrowserSourceMaps: false,
 
@@ -30,6 +32,13 @@ const nextConfig: NextConfig = {
 
   // Cache build outputs to speed up subsequent builds
   poweredByHeader: false,
+
+  // Optional: Add experimental features if needed
+  // experimental: {
+  //   turbo: {
+  //     // Turbopack configuration
+  //   },
+  // },
 };
 
 export default nextConfig;

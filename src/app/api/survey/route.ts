@@ -43,10 +43,9 @@ export async function POST(req: Request) {
       last_name = parts.slice(1).join(" ") || "";
     }
 
-    // Map your form fields to GHL survey custom values
     const payload = {
-      formId: "QFhqwcCKPqPqi1X5oHBJ",
-      location_id: "ylQeeuidDepgki3YpGnY",
+      formId: process.env.MAIN_SURVEY,
+      location_id: process.env.LOCATION_ID,
       first_name,
       last_name,
       email: body.email,
